@@ -1,0 +1,10 @@
+node {
+    stage('git checkout'){
+        git 'https://github.com/sd171992/Jenkins-Docker-Project.git'
+    }
+    stage("docker build"){
+        sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
+        sh 'docker image tag $JOB_NAME:v1.$BUILD_ID sumitpatil12/$JOB_NAME:v1.$BUILD_ID'
+        sh 'docker image tag $JOB_NAME:v1.$BUILD_ID sumitpatil12/$JOB_NAME:latest'
+    }
+}
