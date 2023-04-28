@@ -1,6 +1,6 @@
 node {
     stage('git checkout'){
-        git 'https://github.com/sd171992/Jenkins-Docker-Project.git'
+        git 'https://github.com/sd171992/Jenkins-Docker-Project1.git'
     }
     stage("docker build"){
         sh 'docker image build -t $JOB_NAME:v1.$BUILD_ID .'
